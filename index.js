@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 res.render("index.ejs",{postHistory});
 })
 app.get('/Contact', (req, res) => {
-res.render("Contact.ejs");
+res.render("contact.ejs");
 })
 app.get('/faq', (req, res) => {
 res.render("faq.ejs");
