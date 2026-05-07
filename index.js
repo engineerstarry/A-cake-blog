@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // allows u to use static files
 app.use(express.static("public"))
