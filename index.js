@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
 res.render("index.ejs",{postHistory});
 })
-app.get('/Contact', (req, res) => {
+app.get('/contact', (req, res) => {
 res.render("contact.ejs");
 })
 app.get('/faq', (req, res) => {
