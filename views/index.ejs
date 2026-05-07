@@ -1,0 +1,58 @@
+<%# header %>
+<%- include("partials/header.ejs") %>
+
+    
+<div class="container mb-3 mt-4">
+    <div class="row whole-box justify-content-center">
+     <div class="col-md-9 col-lg-8">
+        <h1 >
+            Welcome to Starry Recipes
+
+        </h1>
+
+         <form action="/done" method="post" >
+
+            
+          <label for="post-recipe" class="d-block mb-1 form-label mt-3">
+           Recipe name:
+
+          </label>
+
+    <input type="text" name="post-recipe" id="post-recipe" class="d-block mb-3 form-control" placeholder="Enter recipe name">
+
+    <textarea placeholder="write the recipe instructions " name="food-recipe" class="form-control  " rows="5" ></textarea>
+
+          
+        
+<button type="submit" class="btn btn-primary d-block mt-3 mb-3 w-100">Post</button>
+            
+       </form>
+
+   </div>
+
+
+<% for( let index = 0; index < postHistory.length; index++ ) { %>
+    <div class="col-md-9 col-lg-8">
+    <div class="card mb-3 p-3 mt-5">
+        
+<p style="white-space: pre-wrap;"><%= postHistory[index].postData %></p>
+<p style="white-space: pre-wrap;"><%= postHistory[index].postData2 %></p>
+
+<div class="d-flex justify-content-between align-items-center mt-3">
+<form action="/delete/<%=postHistory[index].id%>" method="post">
+<button type="submit" class="btn btn-primary btn-sm w-100" >Delete</button>
+</form>
+
+<form action="/edit/<%=postHistory[index].id %>" method="get">
+<button type="submit" class="mt-2 btn btn-primary btn-sm w-100">Edit</button>
+</form>
+</div>
+        </div>
+    </div>
+    <% } %>
+     
+    </div>
+</div>
+
+
+<%- include("partials/footer.ejs") %>

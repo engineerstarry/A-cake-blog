@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="container">
+    <form action="/Done/ <%=id %>" method="post">
+     <label class="mt-4" for="edited-recipe-name">Write the name of your recipe:</label>  
+      <input  type="text" name="edited-recipe-name" id="edited-recipe-name" class="form-control" value=" <%=post.postData  %>" class="d-block mt-3">
+     <textarea rows="5" class="d-block mt-3 form-control" name="edited-recipe"><%= post.postData2 %> </textarea>
+<button type="submit" class="mt-2 btn btn-primary w-100">Done</button>
+</form>
+</div>
+<%- include("partials/footer.ejs") %>
